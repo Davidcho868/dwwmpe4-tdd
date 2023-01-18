@@ -41,7 +41,7 @@ else
     echo "❎ Test raté ! (valeur attendue : [$EXPECTED_VALUE], valeur reçue : [$RECEIVED_VALUE] )"
 fi
 
-# Cas nominal 3 : 7275 affiche 1h1m15s
+# Cas nominal 3 : 7275 affiche 2h1m15s
 
 echo --------------------------------------------------------------------
 echo  Test nominal 3 : 7275 affiche 2h1m15s
