@@ -57,3 +57,20 @@ echo "✅ Test réussi"
 else
     echo "❎ Test raté ! (valeur attendue : [$EXPECTED_VALUE], valeur reçue : [$RECEIVED_VALUE] )"
 fi
+
+## CAS D'ERREUR NUMERO 2
+
+
+echo --------------------------------------------------------------------
+echo  Test erreur 2 :  erreur, le paramètre reçu est négatif
+echo --------------------------------------------------------------------
+# Valeurs du test
+PARAMETER=-17
+EXPECTED_VALUE=" erreur, le paramètre reçu est négatif"
+RECEIVED_VALUE=$(./exo_1.sh $PARAMETER)
+
+if [[ "$EXPECTED_VALUE" = "$RECEIVED_VALUE" ]]; then
+echo "✅ Test réussi"
+else
+    echo "❎ Test raté ! (valeur attendue : [$EXPECTED_VALUE], valeur reçue : [$RECEIVED_VALUE] )"
+fi

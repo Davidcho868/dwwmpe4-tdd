@@ -3,8 +3,13 @@
 if [[ $# < 1 ]]; then
     echo "il manque 1 paramètre"
     exit 1
-fi
+    
+    fi
 
+  if [[ $1 -lt 0 ]]; then
+    echo "erreur, le paramètre reçu est négatif"
+    exit 2
+    fi
 
 
 
@@ -15,4 +20,3 @@ if [[ $1 > 60 ]]; then
 else
     echo "${1}s"
 fi
-
