@@ -6,8 +6,15 @@ if [[ $# < 1 ]]; then
     
     fi
 
-  if [[ $1 -lt 0 ]]; then
-    echo "erreur, le paramètre reçu est négatif"
+   re='^[+-]?[0-9]+([.][0-9]+)?$'
+if ! [[ ${1} =~ $re ]]; then
+    echo "erreur, le paramètre n'est pas un nombre"
+    exit 3
+fi
+
+
+if [[ $1 -lt 0 ]]; then
+    echo "erreur, le paramètre est négatif"
     exit 2
     fi
 
@@ -15,7 +22,7 @@ if [[ $# < 1 ]]; then
 
 MIN=$(( $1/60 ))
 SEC=$(( $1%60 ))
-if [[ $1 > 60 ]]; then
+if [[ $1 -gt 60 ]]; then
     echo "${MIN}m${SEC}s"
 else
     echo "${1}s"
